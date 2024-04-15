@@ -12,23 +12,13 @@ const { parse } = require("dotenv");
 const fileUpload = require("express-fileupload");
 const paymentRoute=require("./routes/paymentRoute")
 const dotenv=require("dotenv");
-// const allowedOrigins = ['http://localhost:3000','http://localhost:4005'];
 
 dotenv.config({path:"Backend/config/config.env"})
 
 app.use(express.json({limit:"25mb"}));
 app.use(cookieParser());
-//  app.use(cors({
-//   origin: 'http://localhost:3000',   methods: ['GET', 'POST', 'PUT','DELETE'], 
-
-// }));
 const { createProxyMiddleware } = require('http-proxy-middleware');
 
-// app.use('/api/v1', createProxyMiddleware({
-//   target: 'http://localhost:4005', // Your API's URL
-//   changeOrigin: true,
-//   secure: false, // Set to 'false' if your API doesn't use HTTPS
-// }));
 const corsOptions = {
   origin: 'http://localhost:3000',
   methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
