@@ -3,7 +3,7 @@ const express=require("express")
 const dotenv=require("dotenv")
 const connectDatabase=require("./config/database")
 const cloudinary=require("cloudinary").v2; 
-const PORT=4005;
+
 //config 
 dotenv.config({path:"backend/config/config.env"});
 //connect to database
@@ -15,7 +15,7 @@ cloudinary.config(
         api_secret:process.env.CLOUDINARY_API_SECRET
     }
 )
- const server=app.listen(PORT,()=>{
+ const server=app.listen(process.env.PORT,()=>{
     console.log(`server is working on http://localhost:${PORT}`)
 })
 //unhandeled promise rejection
