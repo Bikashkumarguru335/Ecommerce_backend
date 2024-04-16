@@ -1,6 +1,7 @@
 const dotenv=require("dotenv")
 dotenv.config({path:"config/config.env"});
 const mongoose=require("mongoose")
+mongoose.set('strictQuery', false);
 
 const connectDatabase=()=>{
 
