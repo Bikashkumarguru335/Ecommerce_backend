@@ -38,5 +38,7 @@ app.use("/api/v1",order);
 app.use("/api/v1",paymentRoute);
 //middleware for error
 app.use(errorMiddlewares)
-
+app.get('/', (req, res) => {
+    res.send('Hello, your service is live!');
+});
 module.exports=app;
