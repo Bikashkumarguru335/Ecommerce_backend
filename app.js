@@ -16,6 +16,7 @@ const dotenv=require("dotenv");
 dotenv.config({path:"Backend/config/config.env"})
 
 app.use(express.json({limit:"25mb"}));
+app.use(express.static('public'));
 app.use(cookieParser());
 const { createProxyMiddleware } = require('http-proxy-middleware');
 
