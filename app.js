@@ -21,7 +21,7 @@ app.use(cookieParser());
 const { createProxyMiddleware } = require('http-proxy-middleware');
 
 const corsOptions = {
-  origin: 'http://localhost:3000',
+  origin:"https://ecommerce-frontend-rv7y.onrender.com",
   methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
   preflightContinue: false,
   optionsSuccessStatus: 204,
