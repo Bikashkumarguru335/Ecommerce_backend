@@ -18,16 +18,16 @@ dotenv.config({path:"Backend/config/config.env"})
 app.use(express.json({limit:"25mb"}));
 app.use(express.static('public'));
 app.use(cookieParser());
-const { createProxyMiddleware } = require('http-proxy-middleware');
+// const { createProxyMiddleware } = require('http-proxy-middleware');
 
-const corsOptions = {
-  origin:"https://main--incredible-zabaione-86a268.netlify.app",
-  methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
-  preflightContinue: false,
-  optionsSuccessStatus: 204,
-};
+// const corsOptions = {
+//   origin:"https://main--incredible-zabaione-86a268.netlify.app",
+//   methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+//   preflightContinue: false,
+//   optionsSuccessStatus: 204,
+// };
 
-app.options('*',cors(corsOptions));
+app.options('*',cors());
 
  app.use(bodyparser.urlencoded({extended:true}))
  app.use(fileUpload())
