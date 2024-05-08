@@ -27,7 +27,7 @@ const corsOptions = {
   optionsSuccessStatus: 204,
 };
 
-app.options(cors(corsOptions));
+app.options('*',cors(corsOptions));
 
  app.use(bodyparser.urlencoded({extended:true}))
  app.use(fileUpload())
