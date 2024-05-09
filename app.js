@@ -20,7 +20,7 @@ app.use(express.static('public'));
 app.use(cookieParser());
 // const { createProxyMiddleware } = require('http-proxy-middleware');
 app.use(cors({
-  origin: 'https://663c5b5284953d6088a10e01--incredible-zabaione-86a268.netlify.app',
+  origin: '*',
 }));
 
 // const corsOptions = {
@@ -30,7 +30,7 @@ app.use(cors({
 //   optionsSuccessStatus: 204,
 // };
 
-app.options('*',cors());
+// app.options('*',cors());
 
  app.use(bodyparser.urlencoded({extended:true}))
  app.use(fileUpload())
