@@ -19,6 +19,9 @@ app.use(express.json({limit:"25mb"}));
 app.use(express.static('public'));
 app.use(cookieParser());
 // const { createProxyMiddleware } = require('http-proxy-middleware');
+app.use(cors({
+  origin: 'https://663c5b5284953d6088a10e01--incredible-zabaione-86a268.netlify.app',
+}));
 
 // const corsOptions = {
 //   origin:"https://main--incredible-zabaione-86a268.netlify.app",
