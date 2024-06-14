@@ -13,7 +13,7 @@ const fileUpload = require("express-fileupload");
 const paymentRoute=require("./routes/paymentRoute")
 const dotenv=require("dotenv");
 
-dotenv.config({path:"Backend/config/config.env"})
+dotenv.config({path:"config/config.env"})
 
 app.use(express.json({limit:"25mb"}));
 app.use(express.static('public'));
