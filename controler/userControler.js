@@ -119,7 +119,7 @@ exports.resetPassword=catchAsyncErr(async(req,res,next)=>{
 exports.getuserDetails=catchAsyncErr(async(req,res,next)=>{
     const user=await User.findById(req.user.id);
     console.log(user);
-    sendToken(user,200,res)
+    res.status(200).json({success:true,user})
 })
 //update user password
 exports.updatePassword=catchAsyncErr(async(req,res,next)=>{
