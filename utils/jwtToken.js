@@ -1,7 +1,7 @@
 //creating token and saving in cookie
 const sendToken=(user,statusCode,res)=>{
 const token=user.getJwtToken()
-     .then((token)=>{
+     
 //option for cookie
       const options={
             expires:new Date(
@@ -16,9 +16,7 @@ const token=user.getJwtToken()
          token,
      });
      return token; 
-    }).catch((err)=>{
-        console.log("token is not a string")
-        }) 
+    
  }
 
  module.exports=sendToken;
