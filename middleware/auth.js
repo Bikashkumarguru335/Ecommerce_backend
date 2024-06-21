@@ -4,7 +4,7 @@ const jwt=require("jsonwebtoken");
 const User=require("../model/userModel");
 
 exports.isAuthenticationUser=catchAsyncErr(async(req,res,next)=>{
-    const { token }=req.Cookies;
+    const { token }=req.cookies;
       if(!token){
            return next(new ErrorHandler("Please Login & Access the resources",401))
         }
