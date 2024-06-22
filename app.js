@@ -11,9 +11,6 @@ const order=require("./routes/orderRoute")
 const { parse } = require("dotenv");
 const fileUpload = require("express-fileupload");
 const paymentRoute=require("./routes/paymentRoute")
-const dotenv=require("dotenv");
-
-dotenv.config({path:"config/config.env"})
 
 app.use(express.json({limit:"25mb"}));
 app.use(express.static('public'));
