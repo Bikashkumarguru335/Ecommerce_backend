@@ -25,7 +25,7 @@ exports.registerUser=catchAsyncErr(async(req,res,next)=>{
             url:myCloud.secure_url,
     },
     });
-    console.log(user,"use register successfully");
+    console.log(user,"use registered successfully");
     sendToken(user,201,res); 
 
  })
