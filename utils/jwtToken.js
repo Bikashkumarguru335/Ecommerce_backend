@@ -14,7 +14,7 @@ const token=user.getJwtToken()
 
 };
              
-     res.status(statusCode).cookie('token',token,options).json({
+     res.cookie('token',token,options).status(statusCode).json({
          sucess:true,
          user,
          token,
