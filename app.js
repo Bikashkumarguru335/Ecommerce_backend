@@ -17,7 +17,10 @@ app.use(express.static('public'));
 app.use(cookieParser());
 // const { createProxyMiddleware } = require('http-proxy-middleware');
 app.use(cors({
-  origin: '*',
+  
+  origin: 'https://ecommerce-frontend-2-uoes.onrender.com',
+  credentials: true, 
+
 }));
 
 // const corsOptions = {
