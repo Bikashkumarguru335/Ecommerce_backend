@@ -48,8 +48,8 @@ exports.registerUser=catchAsyncErr(async(req,res,next)=>{
     }
     sendToken(user,200,res); 
 })
-//
-export.fetchProtectedResource=catchAsyncErr('/protected',async(req, res) => {
+//fetch token
+export.fetchProtectedResource=catchAsyncErr(async(req, res,next) => {
   res.status(200).json({
     success: true,
     message: "You have access to this protected resource.",
