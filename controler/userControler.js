@@ -182,6 +182,7 @@ exports.updatePassword=catchAsyncErr(async(req,res,next)=>{
     //get all user(admin)
     exports.getAllUser=catchAsyncErr(async(req,res,next)=>{
         const users=await User.find();
+        console.log("get all user ",users)
 res.status(200).json({
             success:true,
             users,
