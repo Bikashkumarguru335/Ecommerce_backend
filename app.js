@@ -16,12 +16,7 @@ app.use(express.json({limit:"25mb"}));
 app.use(express.static('public'));
 app.use(cookieParser());
 // const { createProxyMiddleware } = require('http-proxy-middleware');
-app.use(cors({
-  
-  origin: 'https://ecommerce-frontend-tjkz.onrender.com',
-  credentials: true, 
-
-}));
+app.use(cors({origin: 'https://ecommerce-frontend-tjkz.onrender.com',credentials:true}));
 
 // const corsOptions = {
 //   origin:"https://main--incredible-zabaione-86a268.netlify.app",
