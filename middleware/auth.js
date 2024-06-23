@@ -4,9 +4,14 @@ const jwt=require("jsonwebtoken");
 const User=require("../model/userModel");
 
 exports.isAuthenticationUser=catchAsyncErr(async(req,res,next)=>{
-    const token =req.cookies;
-    console.log("Cookies:", req.cookies);
-  console.log("Token:", token);
+    const authHeader = req.headers.authorization;
+  
+  if (!authHeader || !authHeader.startsWith("Bearer ")) {
+    return next(new ErrorHandler("Please Login & Access the resources", 401));
+  }
+
+  const token = authHeader.split(" ")[1];
+ console.log("Token:", token);
       if(!token){
            return next(new ErrorHandler("Please Login & Access the resources",401))
         }
