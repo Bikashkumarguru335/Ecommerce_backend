@@ -16,7 +16,7 @@ router.route("/logout").get(logout);
 router.route("/me").get(isAuthenticationUser,getuserDetails)
 router.route("/password/update").put(isAuthenticationUser,updatePassword);
 router.route("/me/update").put(isAuthenticationUser,updateProfile);
-router.route("/admin/users").get(isAuthenticationUser,authorizeRoles("admin"),getAllUser);
+router.route("/admin/users").get(isAuthenticationUser,getAllUser);
 router.route("/admin/user/:id").get(isAuthenticationUser,authorizeRoles("admin"),getSingleUser)
 .put(isAuthenticationUser,authorizeRoles("admin"),updateUserRole)
 .delete(isAuthenticationUser,authorizeRoles("admin"),deleteUser)
