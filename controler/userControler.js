@@ -6,6 +6,7 @@ const { validate } = require("../model/userModel");
 const sendEmail=require("../utils/sendEmail.js")
 const crypto=require("crypto");
 const cloudinary=require("cloudinary")
+const isAuthenticationUser=require("../middleware/auth.js")
 
 //Register a user
 exports.registerUser=catchAsyncErr(async(req,res,next)=>{
@@ -47,6 +48,17 @@ exports.registerUser=catchAsyncErr(async(req,res,next)=>{
     }
     sendToken(user,200,res); 
 })
+//
+export.fetchProtectedResource=catchAsyncErr('/protected',async(req, res) => {
+  res.status(200).json({
+    success: true,
+    message: "You have access to this protected resource.",
+    user: req.user,
+  });
+});
+
+
+
 //logout user
 exports.logout=catchAsyncErr(async(req,res,next)=>{
     res.cookie("token",null,{
