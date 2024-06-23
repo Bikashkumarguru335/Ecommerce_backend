@@ -18,7 +18,7 @@ app.use(cookieParser());
 // const { createProxyMiddleware } = require('http-proxy-middleware');
 app.use(cors({
   
-  origin: 'https://ecommerce-frontend-2-uoes.onrender.com',
+  origin: 'https://ecommerce-frontend-tjkz.onrender.com',
   credentials: true, 
 
 }));
