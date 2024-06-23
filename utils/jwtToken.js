@@ -2,7 +2,7 @@
 const sendToken=(user,statusCode,res)=>{
 const token=user.getJwtToken()
   if(token){
-  console.log(token);   
+  console.log("jwt folder",token);   
   }
 //option for cookie
       const options={
