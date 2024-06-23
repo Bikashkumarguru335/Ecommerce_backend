@@ -130,7 +130,7 @@ exports.resetPassword=catchAsyncErr(async(req,res,next)=>{
 //get user details 
 exports.getuserDetails=catchAsyncErr(async(req,res,next)=>{
     const user=await User.findById(req.user.id);
-    console.log(user);
+    console.log("get user details->",user);
     res.status(200).json({success:true,user})
 })
 //update user password
@@ -182,7 +182,7 @@ exports.updatePassword=catchAsyncErr(async(req,res,next)=>{
     //get all user(admin)
     exports.getAllUser=catchAsyncErr(async(req,res,next)=>{
         const users=await User.find();
-        console.log("get all user ",users)
+        console.log("get all user",users)
 res.status(200).json({
             success:true,
             users,
