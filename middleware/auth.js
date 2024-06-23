@@ -5,8 +5,9 @@ const User=require("../model/userModel");
 
 exports.isAuthenticationUser=catchAsyncErr(async(req,res,next)=>{
     const authHeader = req.headers.authorization;
-  
+  console.log(authHeader);
   if (!authHeader || !authHeader.startsWith("Bearer ")) {
+      
     return next(new ErrorHandler("Please Login & Access the resources", 401));
   }
 
