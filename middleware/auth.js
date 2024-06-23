@@ -19,7 +19,7 @@ exports.isAuthenticationUser=catchAsyncErr(async(req,res,next)=>{
        
  const decodeData=await jwt.verify(token,process.env.JWT_SECRET)
  req.user=await User.findById(decodeData.id);
-    console.log("-->",req.user)
+    console.log("Auth-->",req.user)
   next();
 });
  exports.authorizeRoles=(...roles)=>{
