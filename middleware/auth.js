@@ -19,9 +19,7 @@ exports.isAuthenticationUser=catchAsyncErr(async(req,res,next)=>{
        
  const decodeData=await jwt.verify(token,process.env.JWT_SECRET)
   req.user=await User.findById(decodeData.id);
-    
-        console.log("Auth-->",req.user)
-        console.log("checking the roles",...roles)
+    console.log("Auth-->",req.user)
 
   next();
 });
@@ -31,7 +29,7 @@ exports.isAuthenticationUser=catchAsyncErr(async(req,res,next)=>{
       return next(new ErrorHandler("User not authenticated", 401));
     }
 
-    console.log("authorization", req.user.role);
+    console.log("authorization",roles);
     console.log("authorization role", req.user.role);
 
          if(!roles.includes(user.role)){
