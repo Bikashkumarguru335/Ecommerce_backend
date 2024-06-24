@@ -12,7 +12,7 @@ const token=user.getJwtToken()
            // secure: process.env.NODE_ENV === 'production', 
            //     sameSite: 'None'
 
-};
+// };
              
      // res.cookie('token',token,options).
        res.status(statusCode).json({
