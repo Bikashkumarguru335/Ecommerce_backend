@@ -23,21 +23,43 @@ exports.isAuthenticationUser=catchAsyncErr(async(req,res,next)=>{
 
   next();
 });
- exports.authorizeRoles=(...roles)=>{
-     return (req,res,next)=>{
-             if (!req.user) {
-      return next(new ErrorHandler("User not authenticated", 401));
+exports.authorizeRoles = (...roles) => {
+  return (req, res, next) => {
+    if (!req.user) {
+      return next(new ErrorHandler('User not authenticated', 401));
     }
 
-    console.log("authorization",roles);
-    console.log("authorization role", req.user.role);
+    console.log('authorization', req.user.role);
+    console.log('authorization role', req.user.role);
 
-         if(!roles.includes(user.role)){
-             return next(
-             new ErrorHandler(`Role: ${user.role}  is not allowed to access this resources`,403)
-             );
-         }
-         next();
-     }
+    if (!roles.includes(req.user.role)) {
+      return next(
+        new ErrorHandler(`Role: ${req.user.role} is not allowed to access this resource`, 403)
+      );
+    }
+
+    next();
+  };
+};
+
+
+
+//
+ // exports.authorizeRoles=(...roles)=>{
+ //     return (req,res,next)=>{
+ //             if (!req.user) {
+ //      return next(new ErrorHandler("User not authenticated", 401));
+ //    }
+
+ //    console.log("authorization",..roles);
+ //    console.log("authorization role", req.user.role);
+
+ //         if(!roles.includes(user.role)){
+ //             return next(
+ //             new ErrorHandler(`Role: ${user.role}  is not allowed to access this resources`,403)
+ //             );
+ //         }
+ //         next();
+ //     }
      
- }
+ // }
