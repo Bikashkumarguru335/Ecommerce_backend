@@ -18,18 +18,21 @@ exports.isAuthenticationUser=catchAsyncErr(async(req,res,next)=>{
         }
        
  const decodeData=await jwt.verify(token,process.env.JWT_SECRET)
- const user=await User.findById(decodeData.id);
-    req.user=user;
+  req.user=await User.findById(decodeData.id);
+    
         console.log("Auth-->",req.user)
 
   next();
 });
- exports.authorizeRoles=(...role)=>{
+ exports.authorizeRoles=(...roles)=>{
          
      return (req,res,next)=>{
-         console.log("authorization",req.user.role)
+             if (!req.user) {
+      return next(new ErrorHandler("User not authenticated", 401));
+    }
 
-    console.log("authorization role",req.user.role)
+    console.log("authorization", req.user.role);
+    console.log("authorization role", req.user.role);
 
          if(!roles.includes(user.role)){
              return next(
