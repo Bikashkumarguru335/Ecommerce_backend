@@ -24,10 +24,10 @@ exports.isAuthenticationUser=catchAsyncErr(async(req,res,next)=>{
 
   next();
 });
- exports.authorizeRoles=(...role)=>{
-         console.log("authorization",user.role)
+ exports.authorizeRoles=(...roles)=>{
+         console.log("authorization",req.user.role)
 
-    console.log("authorization role",user.role)
+    console.log("authorization role",req.user.role)
 
      return (req,res,next)=>{
          if(!roles.includes(user.role)){
