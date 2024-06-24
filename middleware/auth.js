@@ -24,7 +24,7 @@ exports.isAuthenticationUser=catchAsyncErr(async(req,res,next)=>{
 
   next();
 });
- exports.authorizeRoles=(...roles)=>{
+ exports.authorizeRoles=(...role)=>{
          
      return (req,res,next)=>{
          console.log("authorization",req.user.role)
