@@ -26,9 +26,9 @@ exports.isAuthenticationUser=catchAsyncErr(async(req,res,next)=>{
 });
  exports.authorizeRoles=(...roles)=>{
      return (req,res,next)=>{
-         if(!roles.includes(req.user.role)){
+         if(!roles.includes(user.role)){
              return next(
-             new ErrorHandler(`Role: ${req.user.role}  is not allowed to access this resources`,403)
+             new ErrorHandler(`Role: ${user.role}  is not allowed to access this resources`,403)
              );
          }
          next();
