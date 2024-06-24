@@ -25,7 +25,7 @@ exports.isAuthenticationUser=catchAsyncErr(async(req,res,next)=>{
   next();
 });
  exports.authorizeRoles=(...roles)=>{
-         
+         console.log("checking the roles",...roles)
      return (req,res,next)=>{
              if (!req.user) {
       return next(new ErrorHandler("User not authenticated", 401));
