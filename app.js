@@ -18,14 +18,6 @@ app.use(cookieParser());
 // const { createProxyMiddleware } = require('http-proxy-middleware');
 app.use(cors({origin: 'https://ecommerce-frontend-dc3n.onrender.com',credentials:true}));
 
-// const corsOptions = {
-//   origin:"https://main--incredible-zabaione-86a268.netlify.app",
-//   methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
-//   preflightContinue: false,
-//   optionsSuccessStatus: 204,
-// };
-
-// app.options('*',cors());
 
  app.use(bodyparser.urlencoded({extended:true}))
  app.use(fileUpload())
