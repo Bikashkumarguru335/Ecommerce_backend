@@ -16,7 +16,7 @@ app.use(express.json({limit:"25mb"}));
 app.use(express.static('public'));
 app.use(cookieParser());
 // const { createProxyMiddleware } = require('http-proxy-middleware');
-app.use(cors({origin: 'https://ecommerce-frontend-dc3n.onrender.com',credentials:true}));
+app.use(cors({origin: `${process.env.FRONTEND_URL}`,credentials:true}));
 
 
  app.use(bodyparser.urlencoded({extended:true}))
