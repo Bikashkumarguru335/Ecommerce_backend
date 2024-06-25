@@ -108,7 +108,7 @@ catch(error){
 exports.resetPassword=catchAsyncErr(async(req,res,next)=>{
     //creating token hash
     const resetPasswordToken=crypto.createHash("sha256").update(req.params.token).digest("hex");
-
+console.log("reset",resetPasswordToken);
     const user=await User.findOne({
         resetPasswordToken,
         resetPasswordExpire:{$gt:Date.now()},
