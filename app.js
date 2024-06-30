@@ -22,10 +22,10 @@ app.use(cors({origin: `${process.env.FRONTEND_URL}`,credentials:true}));
  app.use(bodyparser.urlencoded({extended:true}))
  app.use(fileUpload())
 //route exports
-app.use("/",product)
-app.use("/",user);
-app.use("/",order);
-app.use("/",paymentRoute);
+app.use("/api/v1",product)
+app.use("/api/v1",user);
+app.use("/api/v1",order);
+app.use("/api/v1",paymentRoute);
 //middleware for error
 app.use(errorMiddlewares)
 app.get('/', (req, res) => {
