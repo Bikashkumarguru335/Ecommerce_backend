@@ -27,6 +27,11 @@ app.use("/api/v1",user);
 app.use("/api/v1",order);
 app.use("/api/v1",paymentRoute);
 //middleware for error
+app.use(express.static(path.join(__dirname, '../frontend/build')));
+
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, '../frontend/build/index.html'));
+});
 app.use(errorMiddlewares)
 app.get('/', (req, res) => {
     res.send('Hello, your service is live!');
