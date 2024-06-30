@@ -82,6 +82,7 @@ if(!user){
     }
     //get reset password token
    const resetToken=user.getResetPasswordToken();
+    console.log("--->",resetToken)
 await user.save({validateBeforeSave:false})
 const resetPasswordUrl=`${process.env.FRONTEND_URL}/password/reset/${resetToken}`;
     console.log(resetPasswordUrl);
