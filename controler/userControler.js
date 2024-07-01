@@ -84,7 +84,7 @@ if(!user){
    const resetToken=user.getResetPasswordToken();
     console.log("--->",resetToken)
 await user.save({validateBeforeSave:false})
-const resetPasswordUrl=`${process.env.FRONTEND_URL}/api/v1/password/reset/${resetToken}`;
+const resetPasswordUrl=`${process.env.FRONTEND_URL}/password/reset/${resetToken}`;
     console.log(resetPasswordUrl);
 const message=`your reset password token is :-\n\n ${resetPasswordUrl} \n\n 
 if you have not requested this email then, please ignore it`;
